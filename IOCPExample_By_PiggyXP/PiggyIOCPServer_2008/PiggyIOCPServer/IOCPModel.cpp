@@ -580,6 +580,41 @@ bool CIOCPModel::_DoRecv( PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pI
 	return _PostRecv( pIoContext );
 }
 
+bool CIOCPModel::_PostSend(PER_IO_CONTEXT * pt)
+{
+	// 初始化变量
+	DWORD dwFlags = 0;
+	DWORD dwBytes = 0;
+	// 3. 继续，建立其下的IoContext，用于在这个Socket上投递第一个Recv数据请求
+	PER_IO_CONTEXT* pNewIoContext = new PER_IO_CONTEXT();
+	pNewIoContext->m_OpType = SEND_POSTED;
+	pNewIoContext->m_sockAccept = pt->m_sockAccept;
+
+	WSABUF *p_wbuf = &pt->m_wsaBuf;
+	OVERLAPPED *p_ol = &pNewIoContext->m_Overlapped;
+
+	// 初始化完成后，，投递WSARecv请求
+	int nBytesSend = WSASend(pNewIoContext->m_sockAccept, p_wbuf, 1, &dwBytes, dwFlags, p_ol, NULL);
+
+	// 如果返回值错误，并且错误的代码并非是Pending的话，那就说明这个重叠请求失败了
+	if ((SOCKET_ERROR == nBytesSend) && (WSA_IO_PENDING != WSAGetLastError()))
+	{
+		this->_ShowMessage(_T("投递第一个WSARecv失败！"));
+		return false;
+	}
+	return true;
+
+}
+bool CIOCPModel::_DoSend(PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pIoContext)
+{
+	// 先把上一次的数据显示出现，然后就重置状态，发出下一个Recv请求
+	SOCKADDR_IN* ClientAddr = &pSocketContext->m_ClientAddr;
+	this->_ShowMessage(_T("收到  %s:%d 信息：%s"), inet_ntoa(ClientAddr->sin_addr), ntohs(ClientAddr->sin_port), pIoContext->m_wsaBuf.buf);
+
+	// 然后开始投递下一个WSARecv请求
+	return _PostSend(pIoContext);
+}
+
 
 
 /////////////////////////////////////////////////////
@@ -768,7 +803,4 @@ bool CIOCPModel::HandleError( PER_SOCKET_CONTEXT *pContext,const DWORD& dwErr )
 		return false;
 	}
 }
-
-
-
 

@@ -1,2 +1,38 @@
-﻿  PiggyIOCPServer.vcxproj -> E:\DEBUG\IOCP-Socurecode\完成端口实例代码\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.exe
-  PiggyIOCPServer.vcxproj -> E:\DEBUG\IOCP-Socurecode\完成端口实例代码\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.pdb (Full PDB)
+﻿  stdafx.cpp
+d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+  PiggyIOCPServer.cpp
+  MainDlg.cpp
+  IOCPModel.cpp
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(101): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(302): warning C4996: 'WSASocketA': Use WSASocketW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(3457): note: 参见“WSASocketA”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(330): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: 参见“inet_addr”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(459): warning C4996: 'WSASocketA': Use WSASocketW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(3457): note: 参见“WSASocketA”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(501): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(502): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(577): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(612): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(709): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(2238): note: 参见“gethostbyname”的声明
+e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(721): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+  正在生成代码...
+  Microsoft (R) Incremental Linker Version 14.00.24215.1
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  "/OUT:E:\DEBUG\IOCP-Socurecode\WinIOCP\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.exe" /MANIFEST "/MANIFESTUAC:level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:XPStyle.manifest "/manifestinput:D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG "/PDB:E:\DEBUG\IOCP-Socurecode\WinIOCP\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT "/IMPLIB:E:\DEBUG\IOCP-Socurecode\WinIOCP\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.lib" /MACHINE:X86 /SAFESEH Debug\PiggyIOCPServer.res 
+  Debug\IOCPModel.obj 
+  Debug\MainDlg.obj 
+  Debug\PiggyIOCPServer.obj 
+  Debug\stdafx.obj 
+IOCPModel.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  PiggyIOCPServer.vcxproj -> E:\DEBUG\IOCP-Socurecode\WinIOCP\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.exe
+  PiggyIOCPServer.vcxproj -> E:\DEBUG\IOCP-Socurecode\WinIOCP\IOCPExample_By_PiggyXP\PiggyIOCPServer_2008\PiggyIOCPServer\Debug\PiggyIOCPServer.pdb (Full PDB)

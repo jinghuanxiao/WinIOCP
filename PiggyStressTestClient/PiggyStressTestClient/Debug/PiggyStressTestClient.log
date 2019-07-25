@@ -1,10 +1,2 @@
-﻿  stdafx.cpp
-d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
-  d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
-  PiggyStressTestClient.cpp
-  MainDlg.cpp
-  Client.cpp
-  正在生成代码...
-Client.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
-  PiggyStressTestClient.vcxproj -> E:\DEBUG\IOCP-Socurecode\完成端口实例代码\PiggyStressTestClient\Debug\PiggyStressTestClient.exe
-  PiggyStressTestClient.vcxproj -> E:\DEBUG\IOCP-Socurecode\完成端口实例代码\PiggyStressTestClient\Debug\PiggyStressTestClient.pdb (Full PDB)
+﻿  PiggyStressTestClient.vcxproj -> E:\DEBUG\IOCP-Socurecode\WinIOCP\PiggyStressTestClient\Debug\PiggyStressTestClient.exe
+  PiggyStressTestClient.vcxproj -> E:\DEBUG\IOCP-Socurecode\WinIOCP\PiggyStressTestClient\Debug\PiggyStressTestClient.pdb (Full PDB)

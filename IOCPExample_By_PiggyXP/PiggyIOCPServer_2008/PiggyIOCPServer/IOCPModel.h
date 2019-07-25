@@ -235,9 +235,7 @@ protected:
 
 	// 在有接收的数据到达的时候，进行处理
 	bool _DoRecv( PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pIoContext );
-
-	bool _DoSend(PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pIoContext);
-	bool CIOCPModel::_PostSend(PER_IO_CONTEXT * pt);
+	bool _PostSend(PER_IO_CONTEXT * pt);
 
 	// 将客户端的相关信息存储到数组中
 	void _AddToContextList( PER_SOCKET_CONTEXT *pSocketContext );

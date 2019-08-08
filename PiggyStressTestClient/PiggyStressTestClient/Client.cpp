@@ -52,63 +52,28 @@ DWORD WINAPI CClient::_WorkerThread(LPVOID lpParam)
 {
 	THREADPARAMS_WORKER *pParams = (THREADPARAMS_WORKER *)lpParam;
 	CClient* pClient = (CClient*) pParams->pClient;
+	while (WAIT_OBJECT_0 != WaitForSingleObject(pClient->m_hShutdownEvent,0)){
 
-	char szTemp[MAX_BUFFER_LEN];
-	memset( szTemp,0,sizeof(szTemp) );
-	char szRecv[MAX_BUFFER_LEN];
-	memset(szRecv,0,MAX_BUFFER_LEN);
+		char szTemp[MAX_BUFFER_LEN];
+		memset(szTemp, 0, sizeof(szTemp));
+		char szRecv[MAX_BUFFER_LEN];
+		memset(szRecv, 0, MAX_BUFFER_LEN);
 
-	int nBytesSent = 0;
-	int nBytesRecv = 0;
+		int nBytesSent = 0;
+		int nBytesRecv = 0;
 
-	//CopyMemory(szTemp,pParams->szBuffer,sizeof(pParams->szBuffer));
+		// 向服务器发送信息
+		sprintf(szTemp, ("第1条信息：%s"), pParams->szBuffer);
+		nBytesSent = send(pParams->sock, szTemp, strlen(szTemp), 0);
+		if (SOCKET_ERROR == nBytesSent)
+		{
+			TRACE("错误：发送1次信息失败，错误代码：%ld\n", WSAGetLastError());
+			return 1;
+		}
+		Sleep(3000);
 
-	// 向服务器发送信息
-	sprintf( szTemp,("第1条信息：%s"),pParams->szBuffer );
-	nBytesSent = send(pParams->sock, szTemp, strlen(szTemp), 0);
-	if (SOCKET_ERROR == nBytesSent) 
-	{
-		TRACE("错误：发送1次信息失败，错误代码：%ld\n", WSAGetLastError());
-		return 1; 
-	}	
-	TRACE("向服务器发送信息成功: %s\n", szTemp);
-	pClient->ShowMessage("向服务器发送信息成功: %s", szTemp);
-
-	Sleep( 3000 );
-
-	// 再发送一条信息
-	memset( szTemp,0,sizeof(szTemp) );
-	sprintf( szTemp,("第2条信息：%s"),pParams->szBuffer );
-	nBytesSent = send(pParams->sock, szTemp, strlen(szTemp), 0);
-	if (SOCKET_ERROR == nBytesSent) 
-	{
-		TRACE("错误：发送第2次信息失败，错误代码：%ld\n", WSAGetLastError());
-		return 1; 
-	}	
-	
-	TRACE("向服务器发送信息成功: %s\n", szTemp);
-	pClient->ShowMessage("向服务器发送信息成功: %s", szTemp);
-
-	Sleep( 3000 );
-	
-	// 发第3条信息
-	memset( szTemp,0,sizeof(szTemp) );
-	sprintf( szTemp,("第3条信息：%s"),pParams->szBuffer );
-	nBytesSent = send(pParams->sock, szTemp, strlen(szTemp), 0);
-	if (SOCKET_ERROR == nBytesSent) 
-	{
-		TRACE("错误：发送第3次信息失败，错误代码：%ld\n", WSAGetLastError());
-		return 1; 
-	}	
-
-	TRACE("向服务器发送信息成功: %s\n", szTemp);
-	pClient->ShowMessage("向服务器发送信息成功: %s", szTemp);
-
-	if( pParams->nThreadNo==pClient->m_nThreads )
-	{
-		pClient->ShowMessage(_T("测试并发 %d 个线程完毕."),pClient->m_nThreads);
+		pClient->ShowMessage("向服务器发送信息成功: %s", szTemp);
 	}
-
 	return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////

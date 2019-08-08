@@ -17,6 +17,10 @@ e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\pig
   c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(2238): note: 参见“gethostbyname”的声明
 e:\debug\iocp-socurecode\winiocp\iocpexample_by_piggyxp\piggyiocpserver_2008\piggyiocpserver\iocpmodel.cpp(709): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
   c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868): note: 参见“inet_ntoa”的声明
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  PiggyIOCPServer.cpp
+  MainDlg.cpp
   Microsoft (R) Incremental Linker Version 14.00.24215.1
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
